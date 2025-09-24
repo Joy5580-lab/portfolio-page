@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Personal Free Website on GitHub - T Level Digital Tutorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #0d1117;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #21262d;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav li {
+            margin: 0 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover, nav a.active {
+            background-color: #30363d;
+        }
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        section {
+            display: none;
+            margin-bottom: 40px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        section.active {
+            display: block;
+        }
+        h2 {
+            color: #0d1117;
+            border-bottom: 2px solid #0d1117;
+            padding-bottom: 10px;
+        }
+        .step-checkbox {
+            margin-right: 10px;
+        }
+        .progress {
+            width: 100%;
+            height: 20px;
+            background-color: #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%;
+            background-color: #0d1117;
+            width: 0%;
+            transition: width 0.3s;
+        }
+        iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+            margin: 20px 0;
+        }
+        .tip {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #0d1117;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #21262d;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0d1117;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Create Your Personal Free Website on GitHub</h1>
+        <p>A Step-by-Step Interactive Tutorial for T Level Digital Students</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('intro')" class="active">Introduction</a></li>
+            <li><a href="#" onclick="showSection('step1')">Step 1: Create Account</a></li>
+            <li><a href="#" onclick="showSection('step2')">Step 2: Create Repository</a></li>
+            <li><a href="#" onclick="showSection('step3')">Step 3: Add Files</a></li>
+            <li><a href="#" onclick="showSection('step4')">Step 4: Enable Pages</a></li>
+            <li><a href="#" onclick="showSection('step5')">Step 5: Customize</a></li>
+            <li><a href="#" onclick="showSection('conclusion')">Conclusion</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        
+        <section id="intro" class="active">
+            <h2>Welcome to Your GitHub Website Tutorial!</h2>
+            <p>As a T Level Digital student, learning to build and host a personal website is a fantastic skill. GitHub Pages allows you to create a free, professional-looking site without any hosting costs. This interactive tutorial will guide you through every step, from signing up to launching your site.</p>
+            <p><strong>Why GitHub Pages?</strong></p>
+            <ul>
+                <li>Free hosting</li>
+                <li>Easy integration with Git for version control</li>
+                <li>Custom domains (optional)</li>
+                <li>Great for portfolios, blogs, or project showcases</li>
+            </ul>
+            <div class="tip">
+                <strong>Tip:</strong> You'll need a computer with a web browser and basic file editing (like Notepad or VS Code, which is free).
+            </div>
+            <p>Click on a step in the navigation to begin!</p>
+        </section>
+        
+        <section id="step1">
+            <h2>Step 1: Create a GitHub Account</h2>
+            <p>To get started, you need a GitHub account. It's free and quick to set up.</p>
+            <ol>
+                <li>Go to <a href="https://github.com" target="_blank">github.com</a>.</li>
+                <li>Click "Sign up" in the top right.</li>
+                <li>Enter your email, create a password, and choose a username (this will be part of your site URL, e.g., username.github.io).</li>
+                <li>Verify your email and complete the setup.</li>
+            </ol>
+            <p>Watch this short video for a visual guide:</p>
+            <iframe src="https://www.youtube.com/embed/Gn3w1UvTx0A" allowfullscreen></iframe>
+            <p>Alternative video: <a href="https://www.youtube.com/watch?v=h5cKAd94QNo" target="_blank">How to Create a GitHub Account</a></p>
+            <label><input type="checkbox" class="step-checkbox" onchange="updateProgress()"> I've completed this step!</label>
+            <div class="tip">
+                <strong>Student Note:</strong> Use your school email if allowed, and choose a professional username.
+            </div>
+        </section>
+        
+        <section id="step2">
+            <h2>Step 2: Create a New Repository</h2>
+            <p>A repository (repo) is like a folder for your website files. For a personal site, name it <code>username.github.io</code> (replace "username" with your GitHub username).</p>
+            <ol>
+                <li>Log in to GitHub and click the green "New" button or go to <a href="https://github.com/new" target="_blank">github.com/new</a>.</li>
+                <li>Enter the repository name: <code>yourusername.github.io</code></li>
+                <li>Make it public (required for free Pages).</li>
+                <li>Check "Add a README file".</li>
+                <li>Click "Create repository".</li>
+            </ol>
+            <p>Official guide: <a href="https://docs.github.com/en/pages/quickstart" target="_blank">GitHub Quickstart</a></p>
+            <label><input type="checkbox" class="step-checkbox" onchange="updateProgress()"> I've created my repository!</label>
+            <div class="tip">
+                <strong>Tip:</strong> If you make a mistake, you can always delete and recreate the repo.
+            </div>
+        </section>
+        
+        <section id="step3">
+            <h2>Step 3: Add Your Website Files</h2>
+            <p>Now, upload or create your HTML files. Start simple with an index.html file.</p>
+            <ol>
+                <li>In your repository, click "Add file" > "Create new file".</li>
+                <li>Name it <code>index.html</code>.</li>
+                <li>Add basic HTML code, e.g.:</li>
+            </ol>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;My Site&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome to My Personal Website!&lt;/h1&gt;
+&lt;p&gt;Hello, I'm a T Level Digital student.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <ol start="4">
+                <li>Commit the file by scrolling down and clicking "Commit new file".</li>
+                <li>Optionally, add CSS or images by uploading files via "Add file" > "Upload files".</li>
+            </ol>
+            <p>Video tutorial:</p>
+            <iframe src="https://www.youtube.com/embed/o5g-lUuFgpg" allowfullscreen></iframe>
+            <label><input type="checkbox" class="step-checkbox" onchange="updateProgress()"> I've added my first file!</label>
+            <div class="tip">
+                <strong>Student Note:</strong> Use this for your portfolio – add sections for projects, skills, and contact info.
+            </div>
+        </section>
+        
+        <section id="step4">
+            <h2>Step 4: Enable GitHub Pages</h2>
+            <p>GitHub Pages will host your site automatically from the repo.</p>
+            <ol>
+                <li>Go to your repository's "Settings" tab.</li>
+                <li>Scroll to "Pages" in the left sidebar.</li>
+                <li>Under "Source", select "Deploy from a branch".</li>
+                <li>Choose "main" branch and "/ (root)", then save.</li>
+                <li>Your site URL will appear (e.g., https://yourusername.github.io). It may take a few minutes to go live.</li>
+            </ol>
+            <p>Video guide:</p>
+            <iframe src="https://www.youtube.com/embed=5XhxR9Vs6zc" allowfullscreen></iframe>
+            <p>Official docs: <a href="https://docs.github.com/en/pages/quickstart" target="_blank">Configuring GitHub Pages</a></p>
+            <label><input type="checkbox" class="step-checkbox" onchange="updateProgress()"> My site is live!</label>
+        </section>
+        
+        <section id="step5">
+            <h2>Step 5: Customize and Deploy Updates</h2>
+            <p>Make it your own! Edit files directly in GitHub or use Git for advanced control.</p>
+            <ul>
+                <li>Add themes: Use free templates from <a href="https://jekyllthemes.io/free-github-pages-themes" target="_blank">Jekyll Themes</a>.</li>
+                <li>Custom domain: In Pages settings, add your domain (requires DNS setup).</li>
+                <li>Update: Edit files and commit – changes deploy automatically.</li>
+            </ul>
+            <p>Advanced tutorial:</p>
+            <iframe src="https://www.youtube.com/embed=e5AwNU3Y2es" allowfullscreen></iframe>
+            <label><input type="checkbox" class="step-checkbox" onchange="updateProgress()"> I've customized my site!</label>
+            <div class="tip">
+                <strong>Pro Tip:</strong> Learn basic HTML/CSS/JS to make it interactive. Practice by adding a contact form or image gallery.
+            </div>
+        </section>
+        
+        <section id="conclusion">
+            <h2>Congratulations!</h2>
+            <p>You've built and hosted your first free website on GitHub! Share the URL with friends, teachers, or on your resume. Remember, GitHub is more than hosting – it's a collaboration tool for coders.</p>
+            <p>Next steps:</p>
+            <ul>
+                <li>Explore Git commands for local editing.</li>
+                <li>Build a full portfolio showcasing T Level projects.</li>
+                <li>Join GitHub communities for feedback.</li>
+            </ul>
+            <p>Stuck? Check <a href="https://docs.github.com/en/pages" target="_blank">GitHub Pages Docs</a> or ask in class.</p>
+            <button onclick="resetProgress()">Restart Tutorial</button>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 T Level Digital Tutorial | Built with ❤️ for Students</p>
+    </footer>
+    
+    <script>
+        function showSection(id) {
+            // Hide all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(sec => sec.classList.remove('active'));
+            
+            // Show selected
+            document.getElementById(id).classList.add('active');
+            
+            // Update nav
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Update progress
+            updateProgress();
+        }
+        
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.step-checkbox:checked');
+            const totalSteps = document.querySelectorAll('.step-checkbox').length;
+            const progress = (checkboxes.length / totalSteps) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+        
+        function resetProgress() {
+            document.querySelectorAll('.step-checkbox').forEach(cb => cb.checked = false);
+            updateProgress();
+            showSection('intro');
+        }
+        
+        // Auto-show intro on load
+        showSection('intro');
+    </script>
+</body>
+</html>
